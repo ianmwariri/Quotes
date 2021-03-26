@@ -23,8 +23,12 @@ export class QuoteComponent implements OnInit {
 
   postQuote(isPostedOn, index){
     if (isPostedOn){
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].saying}?`)
+
+      if (toDelete){
       this.quotes.splice(index,1);
     }
+  }
   }
 
   constructor() { }

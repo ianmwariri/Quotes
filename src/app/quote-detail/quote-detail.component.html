@@ -1,4 +1,3 @@
-<p>
-    Posted by: {{quote.personSubmitting}}
-    <button (click)='quotePosting(true)'>Posted on</button>
-</p>
+<p>Posted by: {{quote.personSubmitting}}</p>
+    <p>Posted {{quote.postingDate|dateCount}} days ago.</p>
+    <button (click)='quotePosting(true)'>Delete Quote</button>
