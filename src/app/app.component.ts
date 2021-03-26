@@ -13,7 +13,7 @@ export class AppComponent {
     {id:3, saying: 'Obssess about the process, not the results.'},
     {id:4, saying: "Dont tell your friends about your indigestion. 'How are you' is a greeting, not a question;) "},
     {id:5, saying: 'Keep it light-hearted always!'},
-
+    
   ];
 
 }
