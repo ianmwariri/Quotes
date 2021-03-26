@@ -1,1 +1,13 @@
-<p>quote works!</p>
+<div>
+    <h1>Quotes App</h1>
+    <hr>
+    <h3>Create your own saying...</h3>
+  
+    <ol>
+      <li *ngFor='let quote of quotes'>
+        {{quote.saying}}
+      </li>
+    </ol>
+    <p *ngIf='quotes.length > 7'>Quite witty! Ever considered writing poetry?</p>
+   
+  </div>
