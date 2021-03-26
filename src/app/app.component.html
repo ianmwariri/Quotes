@@ -1,5 +1,11 @@
 <div>
   <h1>Quotes App</h1>
   <h3>Create your own saying...</h3>
-  <p>Quote of the Day: "{{ quote }} "</p>
+
+  <ol>
+    <li *ngFor='let quote of quotes'>
+      {{quote}}
+    </li>
+  </ol>
+ 
 </div>
