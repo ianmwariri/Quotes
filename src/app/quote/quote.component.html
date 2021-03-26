@@ -4,9 +4,11 @@
     <h3>Create your own saying...</h3>
   
     <ol>
-      <li *ngFor='let quote of quotes'>
+      <li *ngFor='let quote of quotes; let i=index'>
         {{quote.saying}}
-       <h4> Submitted by:   <app-quote-detail [quote]='quote'></app-quote-detail></h4>
+        <button (click)='toggleDetails(i)'>Toggle Details</button>
+         <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+    
       </li>
     </ol>
     <p *ngIf='quotes.length > 7'>Quite witty! Ever considered writing poetry?</p>
