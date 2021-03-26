@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
 
 @Component({
@@ -9,6 +9,11 @@ import { Quote } from '../quote';
 export class QuoteDetailComponent implements OnInit {
 
   @Input() quote: Quote;
+  @Output() isPostedOn = new EventEmitter<boolean>();
+
+  quotePosting(posted:boolean){
+    this.isPostedOn.emit(posted);
+  }
   constructor() { }
 
   ngOnInit(){
