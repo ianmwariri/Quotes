@@ -1,33 +1,48 @@
 <div class="container-fluid">
     <h2 class="text-center">Post a Quote</h2>
     <hr>
-    <form #quoteForm='ngForm'>
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
         <div class="form-group">
-  
-            <label for="name">Quote</label>
-            <input type="text" required class="form-control" id="saying" [(ngModel)]="newQuote.saying" name="saying">
-  
+
+            <label for="saying">Quote</label>
+            <input type="text" required class="form-control" placeholder="Insert Quote here..." id="saying" [(ngModel)]="newQuote.saying" name="saying"
+                #saying='ngModel'>
+            <div [hidden]="saying.valid || saying.pristine" class="alert alert-danger">
+                <p>A Quote is Required...</p>
+                
+            </div>
             <!-- Testing to see if we get any data -->
-          Display {{newQuote.saying}}
+            <!-- Display {{newQuote.saying}} -->
         </div>
         <div class="form-group">
-  
+            <hr>
             <label for="description">Author</label>
-            <input type="text" required class="form-control" id="author" [(ngModel)]="newQuote.author" name="author">
-            Display {{newQuote.author}}
+            <input type="text" required class="form-control" placeholder="Author's Name" id="author" [(ngModel)]="newQuote.author" name="author" #author='ngModel'>
+            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                <p>An Author name is Required...</p>
+            </div>
+            <!-- Display {{newQuote.author}} -->
         </div>
         <div class="form-group">
-  
+            <hr>
             <label for="description">Posted By:</label>
-            <input type="text" required placeholder="Your Name..." class="form-control" id="postedBy" [(ngModel)]="newQuote.personSubmitting" name="postedBy">
-            Display {{newQuote.personSubmitting}}
+            <input type="text" required placeholder="Your Name..." class="form-control" id="postedBy"
+                [(ngModel)]="newQuote.personSubmitting" name="postedBy" #postedBy='ngModel'>
+                <div [hidden]="postedBy.valid || postedBy.pristine" class="alert alert-danger">
+                    <p>Your Name is Required kindly...</p>
+                </div>
+           
+                <!-- Display {{newQuote.personSubmitting}} -->
         </div>
         <div class="form-group">
+            <hr>
             <label for="complete">Date Posted:</label>
-            <input type='date' id="posted" required>
-  
+            <input type='date' id="posted" [(ngModel)]="newQuote.postingDate" name="postingDate" #postingDate="ngModel" required>
+            <div [hidden]="postingDate.valid || postingDate.pristine" class="alert alert-danger">
+                <p>Date is required</p>
+              </div>
         </div>
 
         <button type="submit" class="btn btn-success">Add Quote</button>
     </form>
-  </div>
+</div>

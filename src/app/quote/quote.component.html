@@ -2,21 +2,24 @@
     <h1>Quotes App</h1>
     <hr>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4" id="leftCol">
             <h3>Create your own saying...</h3>
 
             <ol>
                 <div *ngFor='let quote of quotes; let i=index'>
-                    <li>{{quote.saying}} due on {{quote.postingDate|date|uppercase}}</li>
+                    <li>{{quote.saying}}</li>
+                         <p id="postedOnParagraph"><br> posted on: {{quote.postingDate|date|uppercase}}</p>
 
                     <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
                     <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isPostedOn)='postQuote($event,i)'>
                     </app-quote-detail>
+                    <hr>
                 </div>
+               
             </ol>
         </div>
-        <div class="col-md-6">
-            <app-quote-form></app-quote-form>
+        <div class="col-md-4" id="rightCol">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>
     <p *ngIf='quotes.length > 7'>Quite witty! Ever considered writing poetry?</p>

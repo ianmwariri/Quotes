@@ -1,2 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+#leftCol{
+    background-color: aqua;
+    padding: 30px;
+    border-radius: 20px;
+    margin-right: 50px;
+    /* margin-left:-50px; */
+    width: 30%;
+}
+
+#rightCol{
+    background-color:darkkhaki;
+    padding: 30px;
+    border-radius: 25px;
+    margin-left: 50px;
+    width: 30%;
+}
+
+body{
+    background-color: azure;
+}
+
+#postedOnParagraph{
+    font-style: italic;
+    color: gray;
+}
