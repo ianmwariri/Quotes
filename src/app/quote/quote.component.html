@@ -6,6 +6,7 @@
     <ol>
       <li *ngFor='let quote of quotes'>
         {{quote.saying}}
+       <h4> Submitted by:   <app-quote-detail [quote]='quote'></app-quote-detail></h4>
       </li>
     </ol>
     <p *ngIf='quotes.length > 7'>Quite witty! Ever considered writing poetry?</p>
